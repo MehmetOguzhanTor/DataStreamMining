@@ -102,3 +102,26 @@ The results from batch classification of MV with different window sizes is given
 ![image](https://github.com/MehmetOguzhanTor/DataStreamMining/assets/116079107/0a6b98ae-df0e-42e0-b3ed-b4fefaaa8adc)
 
 Figure 12: Plotting of Batch classification of MV with different window sizes
+
+As the results show that, the accuracy of the model with all of the three data is higher than the individual ones. The reason for this is that the classification is ensembled with all three classifiers.
+
+WMV
+
+![image](https://github.com/MehmetOguzhanTor/DataStreamMining/assets/116079107/cc7ecd27-966d-4c43-8a45-a9519a7ce0c2)
+
+Figure 12: Plotting of Batch classification of WMV with different window sizes
+
+Changing the weights of the single classifiers inside the batch classification model can change the result of the accuracy.
+6.	Comparison of Models
+b. The comparisons are done in detail in the end of every part. To summarize them for steps to and 3 for Interleaved Test Then Train approach, for the Hoeffding Tree classifier, this approach worked perfectly, and the algorithm trained as the number of training increased and at the end, the resulting accuracies were satisfying considering their individual advantages of disadvantages of noise as some of them has more noise than others. K nearest neighbor also worked successful among single classifiers and an increase is observed as the algorithm is trained over epochs. On the other hand, for the last single online classifier which is MLP the case was not so successful as it did not accept testing the algorithm over the data without training first. Some ways are tried to observe the testing for undertrained model to train it with another dataset, yet it did not show the result that we expected from an Interleaved Test Then Train approach because when the third data were being trained on the model, the accuracy dropped unexpectedly. Other than this situation, the process was successful and both HT and KNN were successful classifiers for the model that it created.
+When Ensemble classifiers are tried like Majority Voting Rule and Weighted Majority Voting Rule, the success rate increased especially with Weights in which case better classifier could have higher weight than other and this situation results in with more accuracy. So, assembling more than one classifier is a successful way to model an algorithm than trying online single classifiers one by one. The resulting shows that ensembles are better than individual models(d.).
+c. Batch sizes does affect the resulting accuracies as they discussed in the batch classification part. Batch size which means window size can increase and decrease the amount of the accuracy differing from classifier or even the data that is used. In order to understand this differentiation different window sizes are tried when it was possible, and the observations are done accordingly.
+e. When the necessary observations are made, it could be said that ensembled batch classifiers slightly more accuracy than single batch classifiers. The reason for this situation is that in the ensembled batch classifiers, there are more classifiers involved which increases the total accuracy. Moreover, when the weighted ensembled batch classifier is implemented, the result of accuracy is higher because weighting the classifiers is beneficial over describing the best online single classifier.
+f. the improvement of the prediction accuracy is tried in every classifier as there were range of epochs and window sizes. Changing the epoch and window sizes will result in more accuracy.
+Appendix
+
+[1]	“Hoeffding Decision Trees,” streamDM. [Online]. Available: http://huawei- noah.github.io/streamDM/docs/HDT.html#:~:text=The%20Hoeffding%20tree%20is%2 0an,(or%20additive%20Chernoff%20bound).&text=Mining%20High- Speed%20Data%20Streams. [Accessed: 14-May-2021].
+
+[2]	T. S. T. Srivastava, “K Nearest Neighbor: KNN Algorithm: KNN in Python & R,” Analytics Vidhya, 18-Oct-2020. [Online]. Available: https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm- clustering/. [Accessed: 14-May-2021].
+ 
+[3]	J. Brownlee, “Crash Course On Multi-Layer Perceptron Neural Networks,” Machine Learning Mastery, 14-Aug-2020. [Online]. Available: https://machinelearningmastery.com/neural-networks-crash-course/. [Accessed: 14- May-2021].
