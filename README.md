@@ -69,3 +69,36 @@ As it can be observed from the plotting of accuracies, the results got even high
 In the fourth part of the project assignment, we are asked to implement batch classification with the online classifiers HT, KNN and MLP that are implemented in the second part of the project. The porpuse of the batch classification is to slice the data into window sizes and finds the highest accuracy among the slices. So, the important part in the batch classification is to determine the window size successfully. However, one of the worst parts of the batch classification is that the algorithm of the batch classification takes too much time to run especially when compared with the other classifications that are implemented in the other parts of the project assignment. Because it takes too much time running one batch classifier, only 3 window sizes are tried for every datasets of every online classifier. However, 3 window size is
  
 enough to observe the changes of the accuracies when closely observed. The results of batch classification for every classifier are given separately in their parts.
+
+HT
+
+![image](https://github.com/MehmetOguzhanTor/DataStreamMining/assets/116079107/dd076d61-cf5f-4015-8640-5629c6570dd9)
+
+Figure 9: Plotting of Batch classification of HF with different window sizes
+
+As it can be observed from the graph of the batch classification of HF, window sizes affect the resulting accuracy. It is important to find the best window size for a given data but, the batch classification with large datasets takes too much time for trying every window size and discovering the best of that fits that dataset. For the datasets that we created in the first part of this project, the accuracies differ for three different window sizes. For the first dataset which has no noise, the accuracy increases, on the other hand, for the second and third data sets which have noise inside, the accuracy decreases for the same window sizes. It is important to note that their accuracies may be increasing for different window sizes.
+
+KNN
+
+![image](https://github.com/MehmetOguzhanTor/DataStreamMining/assets/116079107/94ac95e2-064c-4db7-9196-aae6e13d5887)
+
+Figure 10: Plotting of Batch classification of KNN with different window sizes
+
+As it can be observed from the plotting of the batch classification of KNN, different window sizes differ the resulting of accuracies. In the case of KNN classifier, it seems that in first two algorithms where first two datasets are trained and tested, the accuracy results increase as the window size gets to 300 from
+100.	On the other hand, accuracy increased with a less slope for the third data in this window size range. Again, it may be increasing more when the window size is different. However, the range of the window size could not be widened in the KNN case because batch classification of KNN algorithm takes too much time and it is difficult and time consuming to try a large range of window sizes in this algorithm.
+
+MLP
+
+![image](https://github.com/MehmetOguzhanTor/DataStreamMining/assets/116079107/b6608aae-78f2-42f1-bf6e-c8cc813c9956)
+
+Figure 11: Plotting of Batch classification of MLP with different window sizes
+
+In the last single batch classification part, which is for the MLP classifier, the algorithm worked faster than the first two single classifier did. This made it possible to try a large range of window size which differs from 100 to 1000 with a step size of 100. So, 10 different window sizes are tried in the last part of fourth problem. As a result, the effects of window sizes on the accuracy of the algorithm can be better observed in the batch classification for MLP classifier. As it can be seen from the plotting that accuracy increases and decreases as the step size differs and it is possible to find the best step size for any data given to the algorithm for testing and training.
+5.	Batch Classification with MV, WMV
+In the last coding part of the assignment, the batch classifiers are implemented with the usage of Majority Vaoting Rule and Weighted Majority Voting Rule which include the Hoeffding Tree, K nearest neighbor and Multilayer Perceptron inside them.
+MV
+The results from batch classification of MV with different window sizes is given in the following figure.
+
+![image](https://github.com/MehmetOguzhanTor/DataStreamMining/assets/116079107/0a6b98ae-df0e-42e0-b3ed-b4fefaaa8adc)
+
+Figure 12: Plotting of Batch classification of MV with different window sizes
