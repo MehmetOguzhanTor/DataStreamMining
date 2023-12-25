@@ -50,3 +50,22 @@ As the observations are made on the results of the MLP classifier, the accuracy 
 In this part of the project, it is asked to implement data stream classification with two online ensemble classifiers which are the Majority Voting rule MV and Weighted Majority Voting rule WMV. These are ensemble classifiers that in our case will combine Hoeffding Tree, K Nearest Neighbor and Multilayer Perceptron single online classifiers for the three SEA Datasets that are generated in the first step of the assignment.
 a.	Majority Voting Rule (MV)
 For the first ensemble classifier, Voting Classifier function used from skylearn library. Inside the function, there is a parameter inside which online classifier that are desired to be used is chosen. In our case HF, KNN and MLP is chosen and inserted into the function. For the function to work without any errors, it is learned that these functions must be inserted in a different location in the code. In the process there is a error that occurred in the MLP algorithm as well. In the error, again it stated that fitting must be implemented before testing any data in the algorithm. So, Interleaved Test Then Train approach failed in the MV and WMV algorithms. However, when the results of the MV algorithm is observed, the accuracies were higher than any classifier that are used in the second part. The accuracy plot can be seen in the following figure.
+
+![image](https://github.com/MehmetOguzhanTor/DataStreamMining/assets/116079107/2f4a513b-2946-4333-a9a0-b28cb107a7db)
+
+Figure 7: Plotting of Interleaved Test Then Train method in MV Classifier
+
+As it can be observed from the plotting that, the accuracy of the SEA Dataset is just under the 100% accuracy which is a successful result of training and testing. For the second data set of SEA Dataset 10, the result again seems good considering there is 10% noise inside the data. Finally, for the third dataset of SEA Dataset 70, the training worked better than before as an increase can be observed in the accuracy graphic considering that it started around 30%. So, it can be stated that MV online ensemble classifier gives better results than any single classifier that are used in this assignment.
+ 
+b.	Weighted Majority Voting Rule (WMV)
+When the Majority Voting Rule is used with weighted online classifier, there is a chance of getting better accuracy results from the ensembled classifier because some single classifiers have more positive affects when their weights are increased but, some of them could decrease the accuracy result since their effects could be negative when their weighs are increased. In the case of our project, after some trials, it is observed that KNN being more weighted has positive effects on the results of accuracy. So, the weight of KNN is increased as other classifiers weight stayed the same. The new results can be observed from the following figure.
+
+![image](https://github.com/MehmetOguzhanTor/DataStreamMining/assets/116079107/b89b6b94-df84-4b53-845a-d1e73c2e3d4e)
+
+Figure 8: Plotting of Interleaved Test Then Train method in WMV Classifier
+
+As it can be observed from the plotting of accuracies, the results got even higher than they were in the MV. So, WMV could have positive effects on the accuracy when the weights are selected according to the single classifiers.
+4.	Batch Classification with HT, KNN, MLP
+In the fourth part of the project assignment, we are asked to implement batch classification with the online classifiers HT, KNN and MLP that are implemented in the second part of the project. The porpuse of the batch classification is to slice the data into window sizes and finds the highest accuracy among the slices. So, the important part in the batch classification is to determine the window size successfully. However, one of the worst parts of the batch classification is that the algorithm of the batch classification takes too much time to run especially when compared with the other classifications that are implemented in the other parts of the project assignment. Because it takes too much time running one batch classifier, only 3 window sizes are tried for every datasets of every online classifier. However, 3 window size is
+ 
+enough to observe the changes of the accuracies when closely observed. The results of batch classification for every classifier are given separately in their parts.
